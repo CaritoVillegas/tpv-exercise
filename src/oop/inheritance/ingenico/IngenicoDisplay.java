@@ -1,7 +1,19 @@
 package oop.inheritance.ingenico;
 
-public class IngenicoDisplay {
+import oop.inheritance.core.TPVDisplay;
 
+public class IngenicoDisplay implements TPVDisplay {
+    private static IngenicoDisplay uniqueInstance;
+    private  boolean lightTurned;
+    private IngenicoDisplay(){
+
+    }
+    public static IngenicoDisplay getInstance(){
+        if(uniqueInstance == null){
+            uniqueInstance = new IngenicoDisplay();
+        }
+        return uniqueInstance;
+    }
     /**
      * Prints a message to specied position
      *
@@ -10,6 +22,11 @@ public class IngenicoDisplay {
      * @param message message to be printed
      */
     public void showMessage(int x, int y, String message) {
+    }
+
+    @Override
+    public void toggleLight() {
+        lightTurned=!lightTurned;
     }
 
     /**

@@ -1,6 +1,20 @@
 package oop.inheritance.verifone.vx690;
 
 public class VerifoneVx690Ethernet {
+    private static VerifoneVx690Ethernet uniqueInstance;
+
+    private VerifoneVx690Ethernet(){
+
+    }
+
+    public static VerifoneVx690Ethernet getInstance(){
+
+        if(uniqueInstance == null){
+            uniqueInstance = new VerifoneVx690Ethernet();
+        }
+
+        return uniqueInstance;
+    }
 
     /**
      * Opens a connection using the ethernet device
