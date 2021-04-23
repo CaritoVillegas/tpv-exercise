@@ -1,5 +1,7 @@
 package oop.inheritance.verifone.v240m;
 
+import java.util.Properties;
+
 public class VerifoneV240mPrinter {
     private static VerifoneV240mPrinter uniqueInstance;
 
